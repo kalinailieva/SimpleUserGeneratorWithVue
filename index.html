@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div id="app">  
+        <div id="title">Simple User Generator with Vue</div>
+
+        <div v-if="!isEmpty" id="detailsContainer">
+            <image 
+            :class="gender" 
+            :src="picture" 
+            :alt="firstName"
+            style="display: inline-block;">
+        </image>
+        <p1>{{firstName}}  {{lastName}}</p1>
+        <p1>email: {{email}}</p1>
+        </div>
+        <div v-else id="emptyContainer"> 
+            <image 
+            :class="gender" 
+            src="https://i.pinimg.com/564x/b6/90/8e/b6908ed423f52a850037c216d38dd232.jpg" 
+            :alt="firstName"
+            style="display: inline-block;">
+            Please click the button</div>
+             
+        <button v-on:click="getUser()">Get this user</button>
+
+        <div id="totalUsers">Total of got users: {{totalUsers}}</div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
